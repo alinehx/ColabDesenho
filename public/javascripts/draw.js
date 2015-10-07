@@ -1,5 +1,4 @@
 
-tool.maxDistance = 50;
 
 
 
