@@ -42,9 +42,9 @@ io.sockets.on('connection', function (socket) {
 
   });
 
-  socket.on( 'drawCircle', function( data, session ) {
+  socket.on( 'desenharCirculo', function( data, session ) {
 
-    socket.broadcast.emit( 'drawCircle', data );
+    socket.broadcast.emit( 'desenharCirculo', data );
 
   });
 

@@ -2,7 +2,7 @@
 
 
 
-function randomCor() {
+function CorRandomica() {
   
   return {
     vermelho: 0,
@@ -23,16 +23,16 @@ function onMouseDrag(event) {
   // de acordo com a velocidade do mouse aumenta o raio
   //var raio = event.delta.length / 2;  
  
-  var cor = randomCor();
+  var cor = CorRandomica();
  
-  drawCircle( x, y, 10, cor );  
+  desenharCirculo( x, y, 10, cor );  
   
   emitCircle( x, y, 10, cor );
 
 }
 
 
-function drawCircle( x, y, raio, cor ) {
+function desenharCirculo( x, y, raio, cor ) {
   
   var circle = new Path.Circle( new Point( x, y ), raio);
   circle.fillColor = new RgbColor( cor.vermelho, cor.verde, cor.azul, cor.alfa );
@@ -51,9 +51,9 @@ function emitCircle( x, y, raio, cor ) {
     cor: cor
   };
  
-  io.emit('drawCircle', data, sessionId);
+  io.emit('desenharCirculo', data, sessionId);
 }
 
-io.on( 'drawCircle', function( data ) {  
-  drawCircle( data.x, data.y, data.raio, data.cor );  
+io.on( 'desenharCirculo', function( data ) {  
+  desenharCirculo( data.x, data.y, data.raio, data.cor );  
 })
